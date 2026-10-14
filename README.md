@@ -136,19 +136,3 @@ The workflow demonstrates how structured data-quality controls can help:
 5. Run the notebook cells in order to load the CSV files, reconcile the datasets, and generate the validation summary.
 
 The notebook expects the two CSV files to be available in its working directory.
-
-## 10. Limitations
-
-- The comparison dataset contains only 20 selected securities and does not represent an exhaustive reconciliation of the full master dataset.
-- A successful match demonstrates consistency between the two supplied datasets; it does not independently verify the values against an authoritative NSE source.
-- The presence of active status for every master record does not establish that every status value is correct.
-- The project validates the supplied snapshot and does not implement continuous monitoring or scheduled production checks.
-
-## 11. Resume Bullet
-
-Built a PostgreSQL and Python data-quality and reconciliation workflow for a 2,384-record NSE security master, validating completeness, uniqueness, identifier formats, listing dates, and status fields; reconciled 20 selected securities with a 100% match rate and zero discrepancies across four compared fields.
-
-## 12. Interview Explanation
-
-“I built a financial reference-data quality project using PostgreSQL and Python. I first profiled a security master containing 2,384 records to check for missing values, duplicates, invalid identifiers, and listing-date issues. I then reconciled 20 selected securities against a comparison dataset using NSE symbols as the matching key. All 20 securities matched, and I found no mismatches across ISIN, company name, listing date, or active status. One important learning was that validation rules must accommodate legitimate symbol formats, so I refined an overly restrictive NSE symbol rule rather than incorrectly treating valid symbols as data defects.”
-
